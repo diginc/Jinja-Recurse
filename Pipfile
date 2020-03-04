@@ -1,0 +1,17 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[packages]
+pathlib2 = "*"
+jinja2 = "*"
+docopt = "*"
+pyyaml = "*"
+
+[requires]
+python_version = "3.8"
+
+[dev-packages]
+pipenv-setup = "*"
+jinja-recurse = {path = "."}

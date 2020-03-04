@@ -1,0 +1,18 @@
+# Jinja Recurse
+
+Jinja Recursive Templating for the CLI, or individual files work too.
+
+## Example usage
+
+```
+# Directory
+$ jinjarecurse -v example/vars.yaml -i example/i_dir -o example/o_dir
+WARNING: example/o_file (output) exists and any conflicting files will be overwritten
+Writing from example/i_file to example/o_file
+
+# Single File
+$ jinjarecurse -v example/vars.yaml -i example/i_file -o example/o_file
+Writing from example/i_dir/i_file_2 to example/o_dir/i_file_2
+Writing from example/i_dir/i_file to example/o_dir/i_file
+Writing from example/i_dir/i_file_1 to example/o_dir/i_file_1
+```

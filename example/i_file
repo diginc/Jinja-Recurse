@@ -1,0 +1,13 @@
+# Top level
+{{root}}
+{{number}}
+{{dictionary}}
+{{list}}
+{{layer_1}}
+
+# Nested data
+
+{{dictionary.street}}
+{{dictionary.city}}
+{{dictionary.state}}
+{{layer_1.layer_2.layer_3}}

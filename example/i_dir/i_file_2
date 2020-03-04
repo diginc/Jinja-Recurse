@@ -1,0 +1,6 @@
+# Nested data
+
+{{dictionary.street}}
+{{dictionary.city}}
+{{dictionary.state}}
+{{layer_1.layer_2.layer_3}}
