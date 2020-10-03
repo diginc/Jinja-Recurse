@@ -1,6 +1,6 @@
-# Jinja Recurse
+# Jinja Recurse CLI tool
 
-Jinja Recursive Templating for the CLI, or individual files work too.
+Jinja Recursive Templating for the CLI.  Recursively template one file or many folders of many files like a config management languages allow, without the whole config management language.  Useful if you're switching from managing an application from config management to just docker and need some simple templating logic.
 
 ## Example usage
 
