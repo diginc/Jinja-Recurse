@@ -1,7 +1,7 @@
 import pathlib
 from setuptools import setup
 
-README = pathlib.Path(__file__).parent / "README"
+README = pathlib.Path(__file__).parent / "README.md"
 README = README.read_text()
 
 setup(
