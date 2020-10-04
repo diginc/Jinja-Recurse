@@ -14,7 +14,7 @@ setup(
     keywords="jinja templater",
     url="https://www.github.com/diginc/jinjarecurse",
     packages=["jinjarecurse"],
-    long_description=README,
+    long_description_content_type=README,
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Topic :: Utilities",
