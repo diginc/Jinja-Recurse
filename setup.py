@@ -7,9 +7,11 @@ README = README.read_text()
 setup(
     name="Jinja Recurse",
     version="0.0.1",
+    metadata_version="2.1",
     author="diginc",
     author_email="adam@diginc.us",
-    description=("Jinja Recursive Templating for the CLI"),
+    description=("Jinja Recursive Templating from the CLI"),
+    long_description_content_type='text/markdown',
     license="MIT",
     keywords="jinja templater",
     url="https://www.github.com/diginc/jinjarecurse",
