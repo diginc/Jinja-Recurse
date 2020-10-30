@@ -1,0 +1,41 @@
+# This workflow will test the Python Package using Pytest when a new commit is pushed
+# For more information see: https://docs.github.com/en/free-pro-team@latest/actions/guides/building-and-testing-python#testing-your-code
+
+name: Test Python Package
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies with pipenv
+        run: |
+          pip install pipenv
+          pipenv install --dev
+
+      - name: Run unit tests
+        run: pipenv run pytest -vvv --junitxml=junit/test-results.xml --cov=tests/ --cov-report=xml --cov-report=html
+
+      - name: Upload unit test results
+        uses: actions/upload-artifact@v2
+        with:
+          name: pytest-results
+          path: junit/test-results.xml
+        # Use always() to always run this step to publish test results when there are test failures
+        if: ${{ always() }}
+
+      - name: Upload code coverage results
+        uses: actions/upload-artifact@v2
+        with:
+          name: code-coverage-report
+          path: |
+            htmlcov/
+            coverage.xml

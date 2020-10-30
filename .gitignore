@@ -2,3 +2,7 @@
 *.sw*
 dist/
 build/
+.coverage
+coverage.xml
+htmlcov/
+junit/
