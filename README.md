@@ -1,10 +1,22 @@
 # jinjarecurse CLI tool
+_________________
+![PyPI](https://img.shields.io/pypi/v/jinjarecurse?color=blue)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/diginc/jinja-recurse/Upload%20Python%20Package)
+![GitHub](https://img.shields.io/github/license/diginc/jinja-recurse)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/jinjarecurse)
+_________________
 
 Jinja Recursive Templating for the CLI.  Recursively template one file or many
 folders of many files like a config management languages allow, without the
 whole config management language.  Useful if you're switching from managing an
 application from config management to just docker and need some simple
 templating logic.
+
+## Installation
+
+```
+pip install jinjarecurse
+```
 
 ## Example Usage
 
@@ -94,9 +106,9 @@ input directory:
 
 ```
 $ jinjarecurse -v example/vars.yaml -i example/i_dir -o example/o_dir
-Writing from example/i_dir/i_file_2 to example/o_dir/i_file_2
 Writing from example/i_dir/i_file to example/o_dir/i_file
 Writing from example/i_dir/i_file_1 to example/o_dir/i_file_1
+Writing from example/i_dir/i_file_2 to example/o_dir/i_file_2
 ```
 
 ## Tests
