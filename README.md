@@ -19,8 +19,11 @@ Writing from example/i_dir/i_file_1 to example/o_dir/i_file_1
 
 ## Tests
 
-To run the unit tests, first install the dev dependencies then invoke pytest:
+To run the unit tests:
 ```
-pipenv install --dev .
-pipenv run py.test -vvvs
+# First install the dependencies
+$ pipenv install --dev .
+
+# Then invoke pytest
+$ pipenv run py.test -vvvs
 ```
