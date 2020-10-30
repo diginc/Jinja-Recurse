@@ -16,3 +16,14 @@ Writing from example/i_dir/i_file_2 to example/o_dir/i_file_2
 Writing from example/i_dir/i_file to example/o_dir/i_file
 Writing from example/i_dir/i_file_1 to example/o_dir/i_file_1
 ```
+
+## Tests
+
+To run the unit tests:
+```
+# First install the dependencies
+$ pipenv install --dev .
+
+# Then invoke pytest
+$ pipenv run py.test -vvvs
+```
