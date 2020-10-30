@@ -82,10 +82,50 @@ def input_file(tmp_path):
 
 
 @pytest.fixture()
+def input_dir(tmp_path):
+    vars_1 = cleandoc(
+        """
+        # Top level
+        {{root}}
+        {{number}}
+        {{dictionary}}
+        {{list}}
+        {{layer_1}}
+        """
+    )
+    vars_2 = cleandoc(
+        """
+        # Nested data
+
+        {{dictionary.street}}
+        {{dictionary.city}}
+        {{dictionary.state}}
+        {{layer_1.layer_2.layer_3}}
+        """
+    )
+    path_dir = tmp_path / "i_dir"
+    path_dir.mkdir()
+    path_file_1 = path_dir / "i_file_1.txt"
+    path_file_2 = path_dir / "i_file_2.txt"
+    path_file_1.write_text(vars_1)
+    path_file_2.write_text(vars_2)
+
+    return path_dir
+
+
+@pytest.fixture()
 def output_file(tmp_path):
     path = tmp_path / "o_file.txt"
 
     return path
+
+
+@pytest.fixture()
+def output_dir(tmp_path):
+    path_dir = tmp_path / "o_dir"
+    path_dir.mkdir()
+
+    return path_dir
 
 
 def test_read_vars(var_file):
@@ -171,7 +211,7 @@ def test_write_template(variables, input_file, output_file, capsys):
 
 
 def test_template(variables, input_file, output_file, capsys):
-    """Test that template works as expected."""
+    """Test that template works as expected with an input file."""
     paths = {"variables": var_file, "input": input_file, "output": output_file}
     template(paths, variables)
 
@@ -184,6 +224,33 @@ def test_template(variables, input_file, output_file, capsys):
         ['ABC', 'DEF', 'HJK']
         {'layer_2': {'layer_3': 'last'}}
 
+        # Nested data
+
+        123 North Ave
+        New York
+        New York
+        last
+        """
+    )
+
+
+def test_template_dir(variables, input_dir, output_dir, capsys):
+    """Test that template works as expected with an input directory."""
+    paths = {"variables": var_file, "input": input_dir, "output": output_dir}
+    template(paths, variables)
+
+    assert (output_dir / "i_file_1.txt").read_text() == cleandoc(
+        """
+        # Top level
+        /
+        1
+        {'city': 'New York', 'state': 'New York', 'street': '123 North Ave'}
+        ['ABC', 'DEF', 'HJK']
+        {'layer_2': {'layer_3': 'last'}}
+        """
+    )
+    assert (output_dir / "i_file_2.txt").read_text() == cleandoc(
+        """
         # Nested data
 
         123 North Ave
