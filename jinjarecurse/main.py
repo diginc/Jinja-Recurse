@@ -1,13 +1,12 @@
 """ Yet Another Jinja (YaJinja) (CLI)
 
 Usage:
-    yajinja [-m] --vars=VARS_FILE --input=INPUT_PATH --output=OUTPUT_PATH
+    yajinja [-h] --vars=VARS_FILE --input=INPUT_PATH --output=OUTPUT_PATH
 
 Options:
     -v <file>, --vars   <file>
     -i <file>, --input  <file>
     -o <file>, --output <file>
-    -e <environment> ...
 """
 import jinja2
 import yaml
