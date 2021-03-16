@@ -33,9 +33,12 @@ def template(paths, variables):
     ''' Handles figuring out src/dest file pathing and invoking template writer '''
     if paths['input'].is_dir():
         for search in paths['input'].rglob('*'):
+            output = Path(str(search).replace(str(paths['input']), str(paths['output']), 1))
+            if search.is_dir():
+                print(f"Creating directory: {output}")
+                output.mkdir(parents=True, exist_ok=True)
             if search.is_file():
-                output = str(search).replace(str(paths['input']), str(paths['output']))
-                write_template(search, Path(output), variables)
+                write_template(search, output, variables)
     elif paths['input'].is_file():
         write_template(paths['input'], paths['output'], variables)
 
