@@ -14,5 +14,6 @@ python_version = "3.8"
 
 [dev-packages]
 pipenv-setup = "*"
-jinja-recurse = {path = "."}
+jinjarecurse = {path = "."}
 pytest = "*"
+pytest-cov = "*"
