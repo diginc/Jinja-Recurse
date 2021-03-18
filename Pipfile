@@ -16,3 +16,4 @@ python_version = "3.8"
 pipenv-setup = "*"
 jinjarecurse = {path = "."}
 pytest = "*"
+pytest-cov = "*"
