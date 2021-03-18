@@ -5,15 +5,15 @@ README = pathlib.Path(__file__).parent / "README.md"
 README = README.read_text()
 
 setup(
-    name="Jinja Recurse",
-    version="0.0.1",
+    name="jinjarecurse",
+    version="0.0.2",
     metadata_version="2.1",
     author="diginc",
     author_email="adam@diginc.us",
     description=("Jinja Recursive Templating from the CLI"),
     license="MIT",
     keywords="jinja templater",
-    url="https://www.github.com/diginc/jinjarecurse",
+    url="https://github.com/diginc/Jinja-Recurse",
     packages=["jinjarecurse"],
     long_description_content_type='text/markdown',
     long_description=README,
@@ -31,6 +31,6 @@ setup(
         "six==1.15.0",
     ],
     entry_points={
-        'console_scripts': [ 'jinjarecurse = jinjarecurse.main:main']
+        'console_scripts': ['jinjarecurse = jinjarecurse.main:main']
     }
 )

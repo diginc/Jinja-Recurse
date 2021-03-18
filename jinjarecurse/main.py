@@ -1,13 +1,12 @@
-""" Yet Another Jinja (YaJinja) (CLI)
+""" jinjarecurse (CLI)
 
 Usage:
-    yajinja [-m] --vars=VARS_FILE --input=INPUT_PATH --output=OUTPUT_PATH
+    jinjarecurse --vars=VARS_FILE --input=INPUT_PATH --output=OUTPUT_PATH
 
 Options:
     -v <file>, --vars   <file>
     -i <file>, --input  <file>
     -o <file>, --output <file>
-    -e <environment> ...
 """
 import jinja2
 import yaml
@@ -18,7 +17,7 @@ from docopt import docopt
 
 
 def main():
-    arguments = docopt(__doc__, version='YaJinja 0.1')
+    arguments = docopt(__doc__, version='jinjarecurse 0.0.2')
     paths = {
         'variables': Path(arguments['--vars']),
         'input': Path(arguments['--input']),
@@ -26,7 +25,6 @@ def main():
     }
     check_paths(**paths)
     variables = read_vars(paths['variables'])
-    #print(variables)
     template(paths, variables)
 
 
