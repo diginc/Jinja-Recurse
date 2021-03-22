@@ -24,7 +24,7 @@ setup(
     ],
     install_requires=[
         "docopt==0.6.2",
-        "jinja2==2.11.2",
+        "jinja2==2.11.3",
         "markupsafe==1.1.1",
         "pathlib2==2.3.5",
         "pyyaml==5.3.1",
