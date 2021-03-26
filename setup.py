@@ -27,7 +27,7 @@ setup(
         "jinja2==2.11.3",
         "markupsafe==1.1.1",
         "pathlib2==2.3.5",
-        "pyyaml==5.3.1",
+        "pyyaml==5.4",
         "six==1.15.0",
     ],
     entry_points={
