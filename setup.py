@@ -6,7 +6,7 @@ README = README.read_text()
 
 setup(
     name="jinjarecurse",
-    version="0.0.2",
+    version="0.0.3",
     metadata_version="2.1",
     author="diginc",
     author_email="adam@diginc.us",
